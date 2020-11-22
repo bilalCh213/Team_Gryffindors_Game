@@ -14,8 +14,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - PlayerBullet
+  - Player
   - 
   - 
   - 
@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG_Far
+    uniqueID: 4239121217
+    locked: 0
+  - name: BG_Close
+    uniqueID: 3731896233
+    locked: 0
+  - name: Ground
+    uniqueID: 2814320461
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FG
+    uniqueID: 3479647135
     locked: 0

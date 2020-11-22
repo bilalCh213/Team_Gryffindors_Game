@@ -14,15 +14,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float xMoveToRotateFactor = 2.0f;
     [SerializeField] private float jumpSquash = 1.2f;
     [SerializeField] private float landingSquashFactor = 2.0f;
+    [Space]
+    public bool isGun = false;
+    [SerializeField] private float shootingDelay = 0.01f;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private float inaccuracyFactor = 4.0f;
 
     private bool isJumping = false;
+    private bool isShooting = false;
+    private float shootingDelayTimer = 0.0f;
     private Vector2 prevVelocity = Vector2.zero;
+    private Camera cam;
 
     private Rigidbody2D rb;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
+    }
+    
+    private float AngleBetweenVector2(Vector2 vec1, Vector2 vec2)
+    {
+        Vector2 diference = vec2 - vec1;
+        float sign = (vec2.y < vec1.y)? -1.0f : 1.0f;
+        return Vector2.Angle(Vector2.right, diference) * sign;
     }
 
     void Update()
@@ -41,6 +57,30 @@ public class PlayerController : MonoBehaviour
         transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x*xMoveToRotateFactor);
 
         if (transform.position.y < -50.0f) SceneManager.LoadScene("SideScroller");
+
+        if (Input.GetMouseButton(0) && isGun)
+        {
+            if (shootingDelayTimer <= 0.0f)
+            {
+                isShooting = true;
+                Instantiate(bullet, transform.GetChild(1).GetChild(1).position,
+                    Quaternion.Euler(0.0f, 0.0f,
+                        transform.GetChild(1).rotation.eulerAngles.z + UnityEngine.Random.Range(-inaccuracyFactor, inaccuracyFactor)))
+                        .SetActive(true);
+                shootingDelayTimer = shootingDelay;
+            }
+        }
+        
+        if (shootingDelayTimer <= shootingDelay / 2)
+        {
+            isShooting = false;
+        }
+        
+        shootingDelayTimer -= Time.deltaTime;
+
+        transform.GetChild(1).gameObject.SetActive(isGun);
+        transform.GetChild(1).rotation = Quaternion.Euler(0.0f, 0.0f, AngleBetweenVector2(transform.position, cam.ScreenToWorldPoint(Input.mousePosition)));
+        transform.GetChild(1).GetChild(1).gameObject.SetActive(isShooting);
     }
     
     void FixedUpdate()
@@ -48,7 +88,7 @@ public class PlayerController : MonoBehaviour
         Vector2 vel = rb.velocity;
         
         int xMove = Mathf.FloorToInt(Input.GetAxisRaw("Horizontal"));
-        int yMove = Mathf.FloorToInt(Input.GetAxisRaw("Vertical"));
+        int yMove = 0;//Mathf.FloorToInt(Input.GetAxisRaw("Vertical"));
 
         vel.x += xMove * acceleration * Time.fixedDeltaTime;
         vel.y += yMove * acceleration * Time.fixedDeltaTime;
