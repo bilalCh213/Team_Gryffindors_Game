@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: FG
     uniqueID: 3479647135
+    locked: 0
+  - name: InGameUI
+    uniqueID: 324362617
     locked: 0

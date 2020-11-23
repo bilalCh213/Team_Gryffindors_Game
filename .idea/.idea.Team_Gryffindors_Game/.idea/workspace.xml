@@ -13,16 +13,21 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickupReceiver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DamageComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StartScreenControls.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/PickupReceiver.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DamageComponent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DestroyAfterDelay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Pickup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/InteractComponent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StartScreenControls.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EffectorComponent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DamageComponent.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ke3vCZUEsqrfR8HqiFriW2Xxo8" />
@@ -72,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606047459613</updated>
       <workItem from="1606047465995" duration="6380000" />
+      <workItem from="1606151211273" duration="6563000" />
     </task>
     <servers />
   </component>

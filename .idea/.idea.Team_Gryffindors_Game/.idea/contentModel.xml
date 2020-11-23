@@ -15,12 +15,15 @@
           <e p="CameraFocusPoints.cs" t="Include" />
           <e p="DamageComponent.cs" t="Include" />
           <e p="DestroyAfterDelay.cs" t="Include" />
+          <e p="EffectorComponent.cs" t="Include" />
+          <e p="EnemyController.cs" t="Include" />
           <e p="InteractComponent.cs" t="Include" />
           <e p="ParallaxEffect.cs" t="Include" />
           <e p="Pickup.cs" t="Include" />
           <e p="PickupReceiver.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="ProximityGroundEffect.cs" t="Include" />
+          <e p="StartScreenControls.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
