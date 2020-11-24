@@ -8,6 +8,7 @@ public class InteractComponent : MonoBehaviour
     public enum Type
     {
         SWITCH = 0,
+        NPC,
     }
 
     [SerializeField] private bool state = false;
@@ -35,17 +36,32 @@ public class InteractComponent : MonoBehaviour
 
             if (Input.GetButtonDown(interactInput))
             {
-                if (!state)
+                switch (type)
                 {
-                    foreach (GameObject obj in activate) obj.SetActive(true);
-                    foreach (GameObject obj in deactivate) obj.SetActive(false);
-                    state = true;
-                }
-                else
-                {
-                    foreach (GameObject obj in activate) obj.SetActive(false);
-                    foreach (GameObject obj in deactivate) obj.SetActive(true);
-                    state = false;
+                    case Type.SWITCH:
+                        if (!state)
+                        {
+                            foreach (GameObject obj in activate) obj.SetActive(true);
+                            foreach (GameObject obj in deactivate) obj.SetActive(false);
+                            state = true;
+                        }
+                        else
+                        {
+                            foreach (GameObject obj in activate) obj.SetActive(false);
+                            foreach (GameObject obj in deactivate) obj.SetActive(true);
+                            state = false;
+                        }
+
+                            break;
+            
+                    case Type.NPC:
+                        if (!state)
+                        {
+                            foreach (GameObject obj in activate) obj.SetActive(true);
+                            foreach (GameObject obj in deactivate) obj.SetActive(false);
+                            state = true;
+                        }
+                        break;
                 }
             }
         }
@@ -57,20 +73,30 @@ public class InteractComponent : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<Bullet>())
+        switch (type)
         {
-            if (!state)
-            {
-                foreach (GameObject obj in activate) obj.SetActive(true);
-                foreach (GameObject obj in deactivate) obj.SetActive(false);
-                state = true;
-            }
-            else
-            {
-                foreach (GameObject obj in activate) obj.SetActive(false);
-                foreach (GameObject obj in deactivate) obj.SetActive(true);
-                state = false;
-            }
+            case Type.SWITCH:
+                if (other.gameObject.GetComponent<Bullet>())
+                {
+                    if (!state)
+                    {
+                        foreach (GameObject obj in activate) obj.SetActive(true);
+                        foreach (GameObject obj in deactivate) obj.SetActive(false);
+                        state = true;
+                    }
+                    else
+                    {
+                        foreach (GameObject obj in activate) obj.SetActive(false);
+                        foreach (GameObject obj in deactivate) obj.SetActive(true);
+                        state = false;
+                    }
+                }
+
+                break;
+            
+            case Type.NPC:
+                //none; must interact via input key
+                break;
         }
     }
 }
