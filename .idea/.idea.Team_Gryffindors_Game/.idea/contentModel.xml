@@ -15,6 +15,7 @@
           <e p="CameraFocusPoints.cs" t="Include" />
           <e p="DamageComponent.cs" t="Include" />
           <e p="DestroyAfterDelay.cs" t="Include" />
+          <e p="DialogueTrigger.cs" t="Include" />
           <e p="EffectorComponent.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
           <e p="InteractComponent.cs" t="Include" />

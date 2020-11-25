@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private bool isTopDown = false;
+    [Space]
     [SerializeField] private float speed;
     [SerializeField] private float acceleration;
     [SerializeField] private Transform[] patrolPoints;
@@ -27,9 +29,11 @@ public class EnemyController : MonoBehaviour
     {
         int xMove = 0, yMove = 0;
         Vector2 vel = rb.velocity;
-        if (Mathf.Abs(patrolPoints[patrolIndex].position.x - transform.position.x) > 2.0f)
+        
+        if (Vector2.Distance(patrolPoints[patrolIndex].position, transform.position) > 2.0f)
         {
             xMove = patrolPoints[patrolIndex].position.x > transform.position.x ? 1 : -1;
+            if(isTopDown) yMove = patrolPoints[patrolIndex].position.y > transform.position.y ? 1 : -1;
         }
         else
         {
@@ -42,6 +46,12 @@ public class EnemyController : MonoBehaviour
 
         if (vel.x > speed) vel.x = speed;
         else if (xMove == 0) vel.x /= 1.2f;
+
+        if (isTopDown)
+        {
+            if (vel.y > speed) vel.y = speed;
+            else if (yMove == 0) vel.y /= 1.2f;
+        }
 
         rb.velocity = vel;
     }

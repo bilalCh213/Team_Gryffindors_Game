@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private bool isTopDown = false;
+    [Space]
     [SerializeField] private float acceleration = 0.1f;
     [SerializeField] private float speed = 10.0f;
     [SerializeField] private float jumpImpulse = 250.0f;
@@ -43,18 +45,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isJumping && rb.velocity.y < 5.0f && rb.velocity.y > -5.0f)
+        if (!isTopDown)
         {
-            isJumping = Input.GetButtonDown("Jump");
-            if(isJumping) transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
+            if (!isJumping && rb.velocity.y < 5.0f && rb.velocity.y > -5.0f)
+            {
+                isJumping = Input.GetButtonDown("Jump");
+                if (isJumping) transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
+            }
+
+            float ySc = prevVelocity.y < rb.velocity.y
+                ? 1.0f - ((rb.velocity.y - prevVelocity.y) / landingSquashFactor)
+                : 1.0f;
+            transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(0.4f + ySc, ySc), 0.05f);
+
+            transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * xMoveToRotateFactor);
         }
-
-        float ySc = prevVelocity.y < rb.velocity.y
-            ? 1.0f - ((rb.velocity.y - prevVelocity.y) / landingSquashFactor)
-            : 1.0f;
-        transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(0.4f + ySc, ySc), 0.05f);
-
-        transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x*xMoveToRotateFactor);
 
         if (transform.position.y < -50.0f) SceneManager.LoadScene("SideScroller");
 
@@ -88,7 +93,9 @@ public class PlayerController : MonoBehaviour
         Vector2 vel = rb.velocity;
         
         int xMove = Mathf.FloorToInt(Input.GetAxisRaw("Horizontal"));
-        int yMove = 0;//Mathf.FloorToInt(Input.GetAxisRaw("Vertical"));
+        int yMove = 0;
+        
+        if(isTopDown) yMove = Mathf.FloorToInt(Input.GetAxisRaw("Vertical"));
 
         vel.x += xMove * acceleration * Time.fixedDeltaTime;
         vel.y += yMove * acceleration * Time.fixedDeltaTime;
@@ -96,15 +103,23 @@ public class PlayerController : MonoBehaviour
         if (vel.x > speed) vel.x = speed;
         else if (xMove == 0) vel.x /= 1.2f;
 
-        if (isJumping)
+        if (!isTopDown)
         {
-            vel.y = jumpImpulse;
-            rb.position += new Vector2(0.0f, jumpPositionImpulse);
-            isJumping = false;
+            if (isJumping)
+            {
+                vel.y = jumpImpulse;
+                rb.position += new Vector2(0.0f, jumpPositionImpulse);
+                isJumping = false;
+            }
+            else
+            {
+                vel.y -= gravityFactor;
+            }
         }
         else
         {
-            vel.y -= gravityFactor;
+            if (vel.y > speed) vel.y = speed;
+            else if (yMove == 0) vel.y /= 1.2f;
         }
 
         rb.velocity = vel;
