@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     private bool isOnGround()
     {
         RaycastHit2D rHit = Physics2D.BoxCast(GetComponent<CapsuleCollider2D>().bounds.center,
-            GetComponent<CapsuleCollider2D>().bounds.size, 0f, Vector2.down, 0.25f, groundLayer);
+            GetComponent<CapsuleCollider2D>().bounds.size - new Vector3(0.25f, 0.25f, 0.0f), 0f, Vector2.down, 0.25f, groundLayer);
         return rHit.collider != null;
     }
 
@@ -105,10 +105,12 @@ public class PlayerController : MonoBehaviour
         
         if(isTopDown) yMove = Mathf.FloorToInt(Input.GetAxisRaw("Vertical"));
 
-        vel.x += xMove * acceleration * Time.fixedDeltaTime;
+        //vel.x += xMove * acceleration * Time.fixedDeltaTime;
+        vel.x = xMove * speed * Time.fixedDeltaTime;
         vel.y += yMove * acceleration * Time.fixedDeltaTime;
 
         if (vel.x > speed) vel.x = speed;
+        else if (vel.x < -speed) vel.x = -speed;
         else if (xMove == 0) vel.x /= 1.2f;
 
         if (!isTopDown)

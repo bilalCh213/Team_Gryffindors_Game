@@ -8,6 +8,7 @@ public class CameraFocusPoints : MonoBehaviour
     [SerializeField] private Transform playerTr;
     [Space]
     [SerializeField] private float playerFocusFactor = 0.5f;
+    [SerializeField] private Vector3 playerFocusOffset = Vector3.zero;
     [SerializeField] private float pointFocusFactor = 0.1f;
     [SerializeField] private float zoomLerpFactor = 0.025f;
     private float zoom = 0.0f;
@@ -38,7 +39,7 @@ public class CameraFocusPoints : MonoBehaviour
     {
         Vector3 camPos = cam.transform.position;
         
-        camPos = Vector2.Lerp(camPos, playerTr.position, playerFocusFactor);
+        camPos = Vector2.Lerp(camPos, playerTr.position + playerFocusOffset, playerFocusFactor);
         camPos = Vector2.Lerp(camPos, GetPositionOfClosestPoint(camPos), pointFocusFactor);
 
         camPos.z = -10.0f;
