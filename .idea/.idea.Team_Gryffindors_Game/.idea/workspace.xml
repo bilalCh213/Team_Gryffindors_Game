@@ -10,7 +10,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DestroyAfterDelay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InteractComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PositionEqualTo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickupReceiver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DamageComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
@@ -33,6 +32,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/PositionEqualTo.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PositionEqualTo.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ke3vCZUEsqrfR8HqiFriW2Xxo8" />
@@ -85,7 +85,7 @@
       <workItem from="1606151211273" duration="6563000" />
       <workItem from="1606212659925" duration="850000" />
       <workItem from="1606324149887" duration="4538000" />
-      <workItem from="1606472384981" duration="4759000" />
+      <workItem from="1606472384981" duration="5889000" />
     </task>
     <servers />
   </component>
