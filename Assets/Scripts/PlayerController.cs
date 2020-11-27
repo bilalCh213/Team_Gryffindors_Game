@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpImpulse = 250.0f;
     [SerializeField] private float jumpPositionImpulse = 1.0f;
     [SerializeField] private float gravityFactor = 10.0f;
+    [SerializeField] private LayerMask groundLayer;
     [Space]
     [SerializeField] private float xMoveToRotateFactor = 2.0f;
     [SerializeField] private float jumpSquash = 1.2f;
@@ -43,11 +44,18 @@ public class PlayerController : MonoBehaviour
         return Vector2.Angle(Vector2.right, diference) * sign;
     }
 
+    private bool isOnGround()
+    {
+        RaycastHit2D rHit = Physics2D.BoxCast(GetComponent<CapsuleCollider2D>().bounds.center,
+            GetComponent<CapsuleCollider2D>().bounds.size, 0f, Vector2.down, 0.25f, groundLayer);
+        return rHit.collider != null;
+    }
+
     void Update()
     {
         if (!isTopDown)
         {
-            if (!isJumping && rb.velocity.y < 5.0f && rb.velocity.y > -5.0f)
+            if (isOnGround() && !isJumping && rb.velocity.y < 5.0f && rb.velocity.y > -5.0f)
             {
                 isJumping = Input.GetButtonDown("Jump");
                 if (isJumping) transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
@@ -56,9 +64,9 @@ public class PlayerController : MonoBehaviour
             float ySc = prevVelocity.y < rb.velocity.y
                 ? 1.0f - ((rb.velocity.y - prevVelocity.y) / landingSquashFactor)
                 : 1.0f;
-            transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(0.4f + ySc, ySc), 0.05f);
+            transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(ySc, ySc), 0.05f);
 
-            transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * xMoveToRotateFactor);
+            //transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * xMoveToRotateFactor);
         }
 
         if (transform.position.y < -50.0f) SceneManager.LoadScene("SideScroller");
