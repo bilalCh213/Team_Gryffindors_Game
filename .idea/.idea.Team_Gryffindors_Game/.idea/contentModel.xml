@@ -23,6 +23,7 @@
           <e p="Pickup.cs" t="Include" />
           <e p="PickupReceiver.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="PositionEqualTo.cs" t="Include" />
           <e p="ProximityGroundEffect.cs" t="Include" />
           <e p="StartScreenControls.cs" t="Include" />
         </e>
