@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float inaccuracyFactor = 4.0f;
     [SerializeField] private Animator animator;
+    [Space]
+    [SerializeField] private GameObject[] playerParticles;
+    [SerializeField] private Vector3[] particleOffsets;
 
     private bool isJumping = false;
     private bool isShooting = false;
@@ -70,7 +73,16 @@ public class PlayerController : MonoBehaviour
                 if (isJumping) transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
             }
 
-            if(xMove != 0) { animator.SetBool("isWalking", true); flipped = xMove < 0; }
+            if(xMove != 0)
+            {
+                if(!animator.GetBool("isWalking"))
+                {
+                    Instantiate(playerParticles[0], transform.position + particleOffsets[0], transform.rotation).SetActive(true);
+                }
+
+                animator.SetBool("isWalking", true);
+                flipped = xMove < 0;
+            }
             else animator.SetBool("isWalking", false);
 
             float ySc = prevVelocity.y < rb.velocity.y

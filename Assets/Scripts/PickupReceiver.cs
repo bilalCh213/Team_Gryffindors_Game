@@ -23,8 +23,8 @@ public class PickupReceiver : MonoBehaviour
         {
             switch (pickups[i])
             {
-                case Pickup.Type.GUN:
-                    GetComponent<PlayerController>().isGun = true;
+                case Pickup.Type.WOLFSKIN:
+                    GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.SetActive(true);
                     pickups.Remove(pickups[i]);
                     break;
                 case Pickup.Type.POTION:

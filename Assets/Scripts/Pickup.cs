@@ -6,7 +6,7 @@ public class Pickup : MonoBehaviour
 {
     public enum Type
     {
-        GUN = 0,
+        WOLFSKIN = 0,
         POTION,
         COIN
     }

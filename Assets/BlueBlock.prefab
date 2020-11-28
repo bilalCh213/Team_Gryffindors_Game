@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2110894146433349394}
   - component: {fileID: 2110894146433349399}
   - component: {fileID: 2110894146433349397}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2110894146477627174}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BlueBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 2110894146484432108}
   - component: {fileID: 2110894146484432109}
   - component: {fileID: 2110894146484432106}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6068186302213375942}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: redOnBlueOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6068186302610429268}
   - component: {fileID: 6068186302610429267}
   - component: {fileID: 6068186302610429266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 6068186302639984364}
   - component: {fileID: 6068186302639984365}
   - component: {fileID: 6068186302639984366}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Toggler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068186302961443197}
   - component: {fileID: 6068186302961443196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: colorBlockActivated (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068186303350585504}
   - component: {fileID: 6068186303350585505}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: colorBlockActivated (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6068186303360133309}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: redOffBlueOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068186303400231583}
   - component: {fileID: 6068186303400231582}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068186303535845689}
   - component: {fileID: 6068186303535845688}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: colorBlockActivated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068186303567460731}
   - component: {fileID: 6068186303567460732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: colorBlockActivated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
