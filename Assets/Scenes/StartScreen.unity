@@ -6850,6 +6850,7 @@ GameObject:
   - component: {fileID: 552080805}
   - component: {fileID: 552080803}
   - component: {fileID: 552080804}
+  - component: {fileID: 552080806}
   m_Layer: 0
   m_Name: QuitButton
   m_TagString: Untagged
@@ -6958,6 +6959,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552080801}
   m_CullTransparentMesh: 0
+--- !u!114 &552080806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552080801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62cae003d5ab314891e492041030131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hover: {fileID: 8300000, guid: 0b1c2b18ed5d52b4290a190268ee7ce4, type: 3}
+  select: {fileID: 8300000, guid: fc4c2997171656f4bb1397b10353196b, type: 3}
+  audSrc: {fileID: 682717274}
 --- !u!1 &579644482
 GameObject:
   m_ObjectHideFlags: 0
@@ -7174,6 +7190,133 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1360968976}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &682717271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682717275}
+  - component: {fileID: 682717274}
+  m_Layer: 0
+  m_Name: AudSrc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &682717274
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682717271}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 64d2da8798a0ecd4a9a22e4d29b39c86, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &682717275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682717271}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1360968976}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &715057914
 GameObject:
@@ -13391,6 +13534,7 @@ GameObject:
   - component: {fileID: 1309884665}
   - component: {fileID: 1309884663}
   - component: {fileID: 1309884664}
+  - component: {fileID: 1309884666}
   m_Layer: 0
   m_Name: PlayButton
   m_TagString: Untagged
@@ -13499,6 +13643,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309884661}
   m_CullTransparentMesh: 0
+--- !u!114 &1309884666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309884661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62cae003d5ab314891e492041030131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hover: {fileID: 8300000, guid: 0b1c2b18ed5d52b4290a190268ee7ce4, type: 3}
+  select: {fileID: 8300000, guid: fc4c2997171656f4bb1397b10353196b, type: 3}
+  audSrc: {fileID: 682717274}
 --- !u!1 &1360968974
 GameObject:
   m_ObjectHideFlags: 0
@@ -13547,6 +13706,7 @@ Transform:
   - {fileID: 610428335}
   - {fileID: 347277779}
   - {fileID: 2010708739}
+  - {fileID: 682717275}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14576,6 +14736,7 @@ GameObject:
   - component: {fileID: 1612783171}
   - component: {fileID: 1612783169}
   - component: {fileID: 1612783170}
+  - component: {fileID: 1612783172}
   m_Layer: 0
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -14684,6 +14845,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612783167}
   m_CullTransparentMesh: 0
+--- !u!114 &1612783172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612783167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62cae003d5ab314891e492041030131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hover: {fileID: 8300000, guid: 0b1c2b18ed5d52b4290a190268ee7ce4, type: 3}
+  select: {fileID: 8300000, guid: fc4c2997171656f4bb1397b10353196b, type: 3}
+  audSrc: {fileID: 682717274}
 --- !u!1 &1628327018
 GameObject:
   m_ObjectHideFlags: 0
@@ -19680,6 +19856,7 @@ MonoBehaviour:
   fadeIn: 1
   fadeLerp: 0.01
   fadeOutScene: Play
+  audSrc: {fileID: 682717274}
 --- !u!1 &1833891067
 GameObject:
   m_ObjectHideFlags: 0
@@ -20394,6 +20571,7 @@ MonoBehaviour:
   fadeIn: 0
   fadeLerp: 0.01
   fadeOutScene: BGStory
+  audSrc: {fileID: 682717274}
 --- !u!114 &2009290204
 MonoBehaviour:
   m_ObjectHideFlags: 0
