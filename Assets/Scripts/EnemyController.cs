@@ -32,6 +32,8 @@ public class EnemyController : MonoBehaviour
     
     void FixedUpdate()
     {
+        if(patrolPoints.Length <= 0) return;
+
         int xMove = 0, yMove = 0;
         Vector2 vel = rb.velocity;
         

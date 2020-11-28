@@ -111,8 +111,8 @@ ScriptedImporter:
     uvTransform: {x: 753, y: -428}
   - name: stone7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.29758447, y: 0.106702395}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -123,7 +123,21 @@ ScriptedImporter:
     spriteID: 4f55dee20c123e840a4b38205d736c44
     internalID: 0
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -58, y: -687}
+      - {x: -112, y: -702}
+      - {x: -153, y: -702}
+      - {x: -228, y: -670}
+      - {x: -271, y: -666}
+      - {x: -319, y: -610}
+      - {x: -319, y: -568}
+      - {x: -261, y: -493}
+      - {x: -188, y: -455}
+      - {x: -43, y: -440}
+      - {x: 41, y: -509}
+      - {x: 79, y: -622}
+      - {x: -12, y: -686}
     vertices: []
     spritePhysicsOutline: []
     indices: 

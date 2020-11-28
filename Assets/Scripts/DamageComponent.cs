@@ -7,6 +7,7 @@ public class DamageComponent : MonoBehaviour
 {
     [SerializeField] private float maxHitPoints = 1.0f;
     [SerializeField] private GameObject damageSpriteDisplay;
+    [SerializeField] private GameObject gameover;
     private float damageSpriteFullScale = 0.0f;
     private float hitPoints = 0.0f;
 
@@ -53,7 +54,8 @@ public class DamageComponent : MonoBehaviour
         {
             if (gameObject.tag == "Player")
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                gameover.SetActive(true);
             }
             else
             {
@@ -73,7 +75,7 @@ public class DamageComponent : MonoBehaviour
                     hitPoints -= maxHitPoints;
 
                 GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.SetActive(false);
-                GetComponent<PlayerController>().WolfParticles();
+                GetComponent<PlayerController>().WolfParticles(true);
             }
         }   
     }

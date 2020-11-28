@@ -41,9 +41,16 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    public void WolfParticles()
+    public void WolfParticles(bool death = false)
     {
-        Instantiate(playerParticles[2], transform.position + particleOffsets[2], transform.rotation).SetActive(true);
+        GameObject p = Instantiate(playerParticles[2], transform.position + particleOffsets[2], transform.rotation);
+        p.SetActive(true);
+
+        if(death)
+        {
+            p.GetComponent<ParticleSystem>().startColor = Color.red;
+            p.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().startColor = Color.red;
+        }
     }
     
     void Start()

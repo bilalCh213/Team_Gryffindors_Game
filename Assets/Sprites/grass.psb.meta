@@ -89,8 +89,8 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: grass4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.58077776, y: 0.81926614}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -101,7 +101,12 @@ ScriptedImporter:
     spriteID: b3d98029bbc9c924a8c6cc73a3da71c9
     internalID: 0
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -341, y: 53.5}
+      - {x: -312, y: 302.5}
+      - {x: 490, y: 302.5}
+      - {x: 490, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
@@ -111,8 +116,8 @@ ScriptedImporter:
     uvTransform: {x: -342, y: 2215}
   - name: grass3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.7785969, y: 0.84915704}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -123,7 +128,18 @@ ScriptedImporter:
     spriteID: f8850d598b4e6dc468662a37aa43d613
     internalID: 0
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 630, y: 340.5}
+      - {x: 417, y: 288.5}
+      - {x: 260, y: 314.5}
+      - {x: 80, y: 347.5}
+      - {x: 82, y: 637.5}
+      - {x: 337, y: 657.5}
+      - {x: 457, y: 657.5}
+      - {x: 746, y: 657.5}
+      - {x: 899, y: 637.5}
+      - {x: 899, y: 347.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
@@ -145,7 +161,12 @@ ScriptedImporter:
     spriteID: 891f7267ba551c24e818eabe00fc0ed6
     internalID: 0
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -461, y: -155.5}
+      - {x: -461, y: 168.5}
+      - {x: 454, y: 168.5}
+      - {x: 454, y: -155.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
@@ -155,8 +176,8 @@ ScriptedImporter:
     uvTransform: {x: -94, y: 1295}
   - name: grass
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5714617, y: 0.41578472}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -167,7 +188,12 @@ ScriptedImporter:
     spriteID: 9eb2d4ad474ca7f45bdc6392fefa9c3a
     internalID: 0
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -426.5, y: -179}
+      - {x: -395.5, y: 40}
+      - {x: 642.5, y: 29}
+      - {x: 642.5, y: -175}
     vertices: []
     spritePhysicsOutline: []
     indices: 

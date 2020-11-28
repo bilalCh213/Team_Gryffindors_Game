@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: 4d90feb5ccff7794bb69f32b3d4aa6e5
   - enabled: 1
-    path: Assets/Scenes/Play.unity
+    path: Assets/Scenes/Play1.unity
     guid: 5c76582b0e3eaf143b32e11ea94bd078
   - enabled: 1
     path: Assets/Scenes/BGStory.unity
     guid: 6bbdd93835f658c48b3dada4d059f210
+  - enabled: 1
+    path: Assets/Scenes/WolfSkinStory.unity
+    guid: 835347d4531e8914fb64401b0de1685d
   m_configObjects: {}
