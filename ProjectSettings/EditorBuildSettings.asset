@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WolfSkinStory.unity
     guid: 835347d4531e8914fb64401b0de1685d
+  - enabled: 1
+    path: Assets/Scenes/Play2.unity
+    guid: ec90aaf2583f718469ba760644848e69
   m_configObjects: {}
