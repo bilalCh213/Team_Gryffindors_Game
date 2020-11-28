@@ -11,6 +11,7 @@ public class CameraFocusPoints : MonoBehaviour
     [SerializeField] private Vector3 playerFocusOffset = Vector3.zero;
     [SerializeField] private float pointFocusFactor = 0.1f;
     [SerializeField] private float zoomLerpFactor = 0.025f;
+    [SerializeField] private bool noYCamMovement = false;
     private float zoom = 0.0f;
 
     void Start()
@@ -38,12 +39,16 @@ public class CameraFocusPoints : MonoBehaviour
     void Update()
     {
         Vector3 camPos = cam.transform.position;
+        Vector3 pointPos = GetPositionOfClosestPoint(camPos);
         
         camPos = Vector2.Lerp(camPos, playerTr.position + playerFocusOffset, playerFocusFactor);
-        camPos = Vector2.Lerp(camPos, GetPositionOfClosestPoint(camPos), pointFocusFactor);
+        camPos = Vector2.Lerp(camPos, pointPos, pointFocusFactor);
+
+        if(noYCamMovement) camPos.y = pointPos.y;
 
         camPos.z = -10.0f;
         cam.transform.position = camPos;
+
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, zoom, zoomLerpFactor);
     }
 }

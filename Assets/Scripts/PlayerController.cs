@@ -22,10 +22,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float shootingDelay = 0.01f;
     [SerializeField] private GameObject bullet;
     [SerializeField] private float inaccuracyFactor = 4.0f;
+    [SerializeField] private Animator animator;
 
     private bool isJumping = false;
     private bool isShooting = false;
+
     private float shootingDelayTimer = 0.0f;
+    private int xMove = 0;
+    private int yMove = 0;
+    private bool flipped = false;
+
     private Vector2 prevVelocity = Vector2.zero;
     private Camera cam;
 
@@ -53,6 +59,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        xMove = Mathf.FloorToInt(Input.GetAxisRaw("Horizontal"));
+        if(isTopDown) yMove = Mathf.FloorToInt(Input.GetAxisRaw("Vertical"));
+
         if (!isTopDown)
         {
             if (isOnGround() && !isJumping && rb.velocity.y < 5.0f && rb.velocity.y > -5.0f)
@@ -61,10 +70,16 @@ public class PlayerController : MonoBehaviour
                 if (isJumping) transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
             }
 
+            if(xMove != 0) { animator.SetBool("isWalking", true); flipped = xMove < 0; }
+            else animator.SetBool("isWalking", false);
+
             float ySc = prevVelocity.y < rb.velocity.y
                 ? 1.0f - ((rb.velocity.y - prevVelocity.y) / landingSquashFactor)
                 : 1.0f;
-            transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(ySc, ySc), 0.05f);
+            float xSc = ySc;
+            if(flipped) xSc = -Mathf.Abs(xSc);
+            else xSc = Mathf.Abs(xSc);
+            transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(xSc, ySc), 0.05f);
 
             //transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * xMoveToRotateFactor);
         }
@@ -91,19 +106,14 @@ public class PlayerController : MonoBehaviour
         
         shootingDelayTimer -= Time.deltaTime;
 
-        transform.GetChild(1).gameObject.SetActive(isGun);
-        transform.GetChild(1).rotation = Quaternion.Euler(0.0f, 0.0f, AngleBetweenVector2(transform.position, cam.ScreenToWorldPoint(Input.mousePosition)));
-        transform.GetChild(1).GetChild(1).gameObject.SetActive(isShooting);
+        //transform.GetChild(1).gameObject.SetActive(isGun);
+        //transform.GetChild(1).rotation = Quaternion.Euler(0.0f, 0.0f, AngleBetweenVector2(transform.position, cam.ScreenToWorldPoint(Input.mousePosition)));
+        //transform.GetChild(1).GetChild(1).gameObject.SetActive(isShooting);
     }
     
     void FixedUpdate()
     {
         Vector2 vel = rb.velocity;
-        
-        int xMove = Mathf.FloorToInt(Input.GetAxisRaw("Horizontal"));
-        int yMove = 0;
-        
-        if(isTopDown) yMove = Mathf.FloorToInt(Input.GetAxisRaw("Vertical"));
 
         //vel.x += xMove * acceleration * Time.fixedDeltaTime;
         vel.x = xMove * speed * Time.fixedDeltaTime;
