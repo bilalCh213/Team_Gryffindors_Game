@@ -25,6 +25,7 @@ public class PickupReceiver : MonoBehaviour
             {
                 case Pickup.Type.WOLFSKIN:
                     GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.SetActive(true);
+                    GetComponent<PlayerController>().WolfParticles();
                     pickups.Remove(pickups[i]);
                     break;
                 case Pickup.Type.POTION:

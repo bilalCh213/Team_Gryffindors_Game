@@ -40,6 +40,11 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
 
     private Rigidbody2D rb;
+
+    public void WolfParticles()
+    {
+        Instantiate(playerParticles[2], transform.position + particleOffsets[2], transform.rotation).SetActive(true);
+    }
     
     void Start()
     {
