@@ -9,10 +9,15 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float acceleration;
     [SerializeField] private Transform[] patrolPoints;
+    [SerializeField] private float idleDelay = 2.0f;
+    [Space]
+    [SerializeField] private Animator animator;
     private int patrolIndex = 0;
     private Camera cam;
 
     private Rigidbody2D rb;
+
+    private float idleTimer = 0.0f;
     
     void Start()
     {
@@ -30,26 +35,36 @@ public class EnemyController : MonoBehaviour
         int xMove = 0, yMove = 0;
         Vector2 vel = rb.velocity;
         
-        if (Vector2.Distance(patrolPoints[patrolIndex].position, transform.position) > 2.0f)
+        if (Vector2.Distance(patrolPoints[patrolIndex].position, transform.position) > 2.0f && idleTimer <= 0.0f)
         {
             xMove = patrolPoints[patrolIndex].position.x > transform.position.x ? 1 : -1;
             if(isTopDown) yMove = patrolPoints[patrolIndex].position.y > transform.position.y ? 1 : -1;
+            if(xMove != 0) transform.GetChild(0).localScale = new Vector2(-xMove*0.5f, 0.5f);
+            animator.SetBool("isWalking", true);
+        }
+        else if(idleTimer > 0.0f)
+        {
+            idleTimer -= Time.deltaTime;
         }
         else
         {
+            idleTimer = idleDelay;
             patrolIndex++;
             if (patrolIndex >= patrolPoints.Length) patrolIndex = 0;
+            animator.SetBool("isWalking", false);
         }
 
         vel.x += xMove * acceleration * Time.fixedDeltaTime;
         vel.y += yMove * acceleration * Time.fixedDeltaTime;
 
         if (vel.x > speed) vel.x = speed;
+        else if (vel.x < -speed) vel.x = -speed;
         else if (xMove == 0) vel.x /= 1.2f;
 
         if (isTopDown)
         {
             if (vel.y > speed) vel.y = speed;
+            else if (vel.y < -speed) vel.y = -speed;
             else if (yMove == 0) vel.y /= 1.2f;
         }
 

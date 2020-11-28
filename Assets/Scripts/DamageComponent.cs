@@ -61,4 +61,20 @@ public class DamageComponent : MonoBehaviour
             }
         }
     }
+
+//special wolf player damage thingy!
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if(coll.gameObject.tag == "Enemy")
+        {
+            if(tag == "Player")
+            {
+                if(!GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.activeSelf)
+                    hitPoints -= maxHitPoints;
+
+                GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.SetActive(false);
+                GetComponent<PlayerController>().WolfParticles();
+            }
+        }   
+    }
 }
