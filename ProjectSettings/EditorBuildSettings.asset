@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SideScroller.unity
-    guid: eeee46b8b682ed54088ee20b65c9ef58
+    path: Assets/Scenes/StartScreen.unity
+    guid: 4d90feb5ccff7794bb69f32b3d4aa6e5
+  - enabled: 1
+    path: Assets/Scenes/Play.unity
+    guid: 5c76582b0e3eaf143b32e11ea94bd078
+  - enabled: 1
+    path: Assets/Scenes/BGStory.unity
+    guid: 6bbdd93835f658c48b3dada4d059f210
   m_configObjects: {}

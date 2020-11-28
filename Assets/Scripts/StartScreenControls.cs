@@ -8,19 +8,14 @@ public class StartScreenControls : MonoBehaviour
     
     public void PlayButton()
     {
-        list[0].SetActive(false);
-        list[1].SetActive(false);
-        list[2].SetActive(true);
-        list[4].SetActive(true);
+        list[3].SetActive(true);
     }
 
     public void CreditsButton()
     {
-        list[0].SetActive(true);
-        list[5].SetActive(false);
-        list[6].SetActive(false);
-        list[2].SetActive(false);
-        list[3].SetActive(true);
+        list[0].SetActive(false);
+        list[1].SetActive(false);
+        list[2].SetActive(true);
     }
 
     public void QuitButton()
@@ -34,10 +29,8 @@ public class StartScreenControls : MonoBehaviour
     public void BackToMenuButton()
     {
         list[0].SetActive(true);
-        list[5].SetActive(true);
-        list[6].SetActive(true);
+        list[1].SetActive(true);
         list[2].SetActive(false);
-        list[3].SetActive(false);
     }
     
     void Start()
