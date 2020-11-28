@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private int xMove = 0;
     private int yMove = 0;
     private bool flipped = false;
+    private bool prevOnGround = true;
 
     private Vector2 prevVelocity = Vector2.zero;
     private Camera cam;
@@ -70,7 +71,19 @@ public class PlayerController : MonoBehaviour
             if (isOnGround() && !isJumping && rb.velocity.y < 5.0f && rb.velocity.y > -5.0f)
             {
                 isJumping = Input.GetButtonDown("Jump");
-                if (isJumping) transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
+                if (isJumping) 
+                {
+                    transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
+                    Instantiate(playerParticles[1], transform.position + particleOffsets[1], transform.rotation).SetActive(true);
+                }
+            }
+
+            if(!prevOnGround && isOnGround())
+            {
+                transform.localScale = new Vector2(jumpSquash, jumpSquash - 1.0f);
+                GameObject jp = Instantiate(playerParticles[1], transform.position + particleOffsets[1], transform.rotation);
+                jp.transform.localScale = Vector2.one / 2.0f;
+                jp.SetActive(true);
             }
 
             if(xMove != 0)
@@ -92,6 +105,7 @@ public class PlayerController : MonoBehaviour
             if(flipped) xSc = -Mathf.Abs(xSc);
             else xSc = Mathf.Abs(xSc);
             transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(xSc, ySc), 0.05f);
+            transform.localScale = new Vector2(xSc, transform.localScale.y);
 
             //transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * xMoveToRotateFactor);
         }
@@ -156,5 +170,7 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = vel;
         prevVelocity = vel;
+
+        prevOnGround = isOnGround();
     }
 }
