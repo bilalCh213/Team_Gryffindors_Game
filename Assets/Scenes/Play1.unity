@@ -13833,6 +13833,7 @@ MonoBehaviour:
   plTr: {fileID: 1408057601}
   ropePoint: {fileID: 1672485762}
   minAttachDist: 3
+  offset: {x: 0, y: 0, z: 0}
   animator: {fileID: 1462257502}
   inputKey: Jump
   disableDelay: 0.5
@@ -14671,7 +14672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  fadeLerp: 0.02
+  fadeLerp: 0.025
   fadeOutScene: Play
   audSrc: {fileID: 1382991420}
 --- !u!114 &929667131
@@ -32220,7 +32221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 0
-  fadeLerp: 0.02
+  fadeLerp: 0.025
   fadeOutScene: WolfSkinStory
   audSrc: {fileID: 1382991420}
 --- !u!114 &1511177386
@@ -54348,7 +54349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 0
-  fadeLerp: 0.02
+  fadeLerp: 0.025
   fadeOutScene: Play1
   audSrc: {fileID: 1382991420}
 --- !u!114 &1869652971

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -29906,7 +29906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  fadeLerp: 0.02
+  fadeLerp: 0.025
   fadeOutScene: Play2
   audSrc: {fileID: 1382991420}
 --- !u!114 &929667131
@@ -58315,7 +58315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 0
-  fadeLerp: 0.02
+  fadeLerp: 0.025
   fadeOutScene: EndStory
   audSrc: {fileID: 1382991420}
 --- !u!114 &1511177386
@@ -85403,7 +85403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 0
-  fadeLerp: 0.02
+  fadeLerp: 0.025
   fadeOutScene: Play2
   audSrc: {fileID: 1382991420}
 --- !u!114 &1869652971
