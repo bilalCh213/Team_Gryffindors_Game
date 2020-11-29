@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11629451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.6, y: 3.08, z: 0}
+  m_LocalPosition: {x: 43.98, y: 2.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 211128147}
@@ -175,7 +175,6 @@ MonoBehaviour:
   indicator: {fileID: 436368748}
   blocks: {fileID: 1725340357}
   interactInput: Proceed
-  colorInd: {fileID: 0}
   onSound: {fileID: 8300000, guid: c928715681786f64090c6e91565abace, type: 3}
   offSound: {fileID: 8300000, guid: 28d09522dcb0d32468da7087dc7f9349, type: 3}
 --- !u!61 &11629454
@@ -310,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72927894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.39, y: 0.4, z: 0.43554688}
+  m_LocalPosition: {x: 47.35, y: 0.4, z: 0.43554688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1988309731}
@@ -31142,7 +31141,7 @@ MonoBehaviour:
   isTopDown: 0
   acceleration: 200
   speed: 1000
-  jumpImpulse: 20
+  jumpImpulse: 24
   jumpPositionImpulse: 1.5
   gravityFactor: 1
   groundLayer:
@@ -56369,7 +56368,6 @@ MonoBehaviour:
   indicator: {fileID: 1581109670}
   blocks: {fileID: 1725340357}
   interactInput: Proceed
-  colorInd: {fileID: 0}
   onSound: {fileID: 8300000, guid: c928715681786f64090c6e91565abace, type: 3}
   offSound: {fileID: 8300000, guid: 28d09522dcb0d32468da7087dc7f9349, type: 3}
 --- !u!61 &2134265396
@@ -56433,7 +56431,6 @@ MonoBehaviour:
   indicator: {fileID: 6068186303212647082}
   blocks: {fileID: 1725340357}
   interactInput: Proceed
-  colorInd: {fileID: 0}
   onSound: {fileID: 8300000, guid: c928715681786f64090c6e91565abace, type: 3}
   offSound: {fileID: 8300000, guid: 28d09522dcb0d32468da7087dc7f9349, type: 3}
 --- !u!212 &1632742883150786196
