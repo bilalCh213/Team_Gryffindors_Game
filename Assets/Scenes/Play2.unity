@@ -70726,9 +70726,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1392232087}
   playerTr: {fileID: 1408057601}
-  playerFocusFactor: 0.004
+  playerFocusFactor: 0.0075
   playerFocusOffset: {x: 0, y: 0, z: 0}
-  pointFocusFactor: 0.01
+  pointFocusFactor: 0.011
   zoomLerpFactor: 0.025
   noYCamMovement: 1
 --- !u!1 &1638680505

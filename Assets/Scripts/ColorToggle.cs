@@ -39,14 +39,14 @@ public class ColorToggle : MonoBehaviour
 
     void ToggleColorBlocks()
     {
-        for(int i = 0; i < 4; i++)
+        /*for(int i = 0; i < 4; i++)
         {
            for(int n = 0; n < blocks.transform.GetChild(i).childCount; n++)
             {
                 blocks.transform.GetChild(i).GetChild(n).GetChild(0).gameObject.SetActive(true);
                 blocks.transform.GetChild(i).GetChild(n).GetChild(1).gameObject.SetActive(false);
             } 
-        }
+        }*/
 
         for(int n = 0; n < blocks.transform.GetChild((int)type).childCount; n++)
         {
