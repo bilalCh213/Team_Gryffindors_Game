@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Play2.unity
     guid: ec90aaf2583f718469ba760644848e69
+  - enabled: 1
+    path: Assets/Scenes/EndStory.unity
+    guid: 5e788cf370ef6c74e893f2825843a087
   m_configObjects: {}

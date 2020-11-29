@@ -14671,9 +14671,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  fadeLerp: 0.01
+  fadeLerp: 0.02
   fadeOutScene: Play
-  audSrc: {fileID: 0}
+  audSrc: {fileID: 1382991420}
 --- !u!114 &929667131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20268,6 +20268,7 @@ MonoBehaviour:
   plTr: {fileID: 1408057601}
   minDist: 2.5
   nextSceneObject: {fileID: 1511177384}
+  proceedClip: {fileID: 8300000, guid: 79ca00bbd0987534c87c61255490e818, type: 3}
 --- !u!1001 &1169639181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31500,6 +31501,10 @@ MonoBehaviour:
   - {x: 0, y: -1.5, z: 0}
   - {x: 0, y: -1.5, z: 0}
   - {x: 0, y: -0.25, z: 0}
+  jumpClip: {fileID: 8300000, guid: 801d5a8d18edb4d4a9c59d836b5bd581, type: 3}
+  landClip: {fileID: 8300000, guid: 801d5a8d18edb4d4a9c59d836b5bd581, type: 3}
+  wolfSkinClip: {fileID: 8300000, guid: a1b19d887af0d4e2581dfdc54bbb8402, type: 3}
+  damageClip: {fileID: 8300000, guid: 7784b97f137244a999da3068a3bd0e9a, type: 3}
 --- !u!50 &1408057599
 Rigidbody2D:
   serializedVersion: 4
@@ -32215,7 +32220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 0
-  fadeLerp: 0.01
+  fadeLerp: 0.02
   fadeOutScene: WolfSkinStory
   audSrc: {fileID: 1382991420}
 --- !u!114 &1511177386
@@ -54343,7 +54348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 0
-  fadeLerp: 0.01
+  fadeLerp: 0.02
   fadeOutScene: Play1
   audSrc: {fileID: 1382991420}
 --- !u!114 &1869652971

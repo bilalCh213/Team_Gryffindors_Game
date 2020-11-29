@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
     [Space]
     [SerializeField] private GameObject[] playerParticles;
     [SerializeField] private Vector3[] particleOffsets;
+    [Space]
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip landClip;
+    [SerializeField] private AudioClip wolfSkinClip;
+    [SerializeField] private AudioClip damageClip;
+    private AudioSource audSrc;
 
     private bool isJumping = false;
     private bool isShooting = false;
@@ -50,11 +56,17 @@ public class PlayerController : MonoBehaviour
         {
             p.GetComponent<ParticleSystem>().startColor = Color.red;
             p.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().startColor = Color.red;
+            audSrc.PlayOneShot(damageClip);
+        }
+        else
+        {
+            audSrc.PlayOneShot(wolfSkinClip);
         }
     }
     
     void Start()
     {
+        audSrc = FindObjectOfType<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
     }
@@ -87,6 +99,7 @@ public class PlayerController : MonoBehaviour
                 {
                     transform.localScale = new Vector2(jumpSquash - 1.0f, jumpSquash);
                     Instantiate(playerParticles[1], transform.position + particleOffsets[1], transform.rotation).SetActive(true);
+                    audSrc.PlayOneShot(jumpClip, 0.5f);
                 }
             }
 
@@ -96,6 +109,7 @@ public class PlayerController : MonoBehaviour
                 GameObject jp = Instantiate(playerParticles[1], transform.position + particleOffsets[1], transform.rotation);
                 jp.transform.localScale = Vector2.one / 2.0f;
                 jp.SetActive(true);
+                audSrc.PlayOneShot(landClip, 0.25f);
             }
 
             if(xMove != 0)
@@ -122,7 +136,7 @@ public class PlayerController : MonoBehaviour
             //transform.GetChild(0).rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * xMoveToRotateFactor);
         }
 
-        if (transform.position.y < -50.0f) SceneManager.LoadScene("SideScroller");
+        //if (transform.position.y < -50.0f) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         if (Input.GetMouseButton(0) && isGun)
         {

@@ -74,7 +74,7 @@ public class DamageComponent : MonoBehaviour
                 if(!GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.activeSelf)
                 {
                     hitPoints -= maxHitPoints;
-                    Destroy(GetComponent<Collider2D>());
+                    GetComponent<Collider2D>().enabled = false;
                 }
 
                 GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.SetActive(false);

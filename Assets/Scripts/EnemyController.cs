@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
             xMove = patrolPoints[patrolIndex].position.x > transform.position.x ? 1 : -1;
             if(isTopDown) yMove = patrolPoints[patrolIndex].position.y > transform.position.y ? 1 : -1;
             if(xMove != 0) transform.GetChild(0).localScale = new Vector2(-xMove*0.5f, 0.5f);
-            animator.SetBool("isWalking", true);
+            if(animator != null) animator.SetBool("isWalking", true);
         }
         else if(idleTimer > 0.0f)
         {
@@ -53,9 +53,11 @@ public class EnemyController : MonoBehaviour
             idleTimer = idleDelay;
             patrolIndex++;
             if (patrolIndex >= patrolPoints.Length) patrolIndex = 0;
-            animator.SetBool("isWalking", false);
+            if(animator != null) animator.SetBool("isWalking", false);
         }
 
+        if(xMove < 0 && vel.x > 0) vel.x = 0.0f;
+        else if(xMove > 0 && vel.x < 0) vel.x = 0.0f;
         vel.x += xMove * acceleration * Time.fixedDeltaTime;
         vel.y += yMove * acceleration * Time.fixedDeltaTime;
 
