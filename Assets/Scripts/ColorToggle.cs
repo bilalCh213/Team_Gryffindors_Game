@@ -21,8 +21,6 @@ public class ColorToggle : MonoBehaviour
     [Space]
     [SerializeField] private string interactInput;
     [Space]
-    [SerializeField] public SpriteRenderer colorInd;
-    [Space]
     [SerializeField] private AudioClip onSound;
     [SerializeField] private AudioClip offSound;
     private AudioSource audSrc;
@@ -52,29 +50,6 @@ public class ColorToggle : MonoBehaviour
         {
             blocks.transform.GetChild((int)type).GetChild(n).GetChild(0).gameObject.SetActive(!state);
             blocks.transform.GetChild((int)type).GetChild(n).GetChild(1).gameObject.SetActive(state);
-        }
-
-        if(!state) colorInd.color = Color.clear;
-        else
-        {
-            switch (type)
-            {
-                case Type.BLUE:
-                colorInd.color = new Color(0.0f, 0.0f, 1.0f, 0.006f);
-                break;
-
-                case Type.RED:
-                colorInd.color = new Color(1.0f, 0.0f, 0.0f, 0.006f);
-                break;
-
-                case Type.GREEN:
-                colorInd.color = new Color(0.0f, 1.0f, 0.0f, 0.006f);
-                break;
-
-                case Type.YELLOW:
-                colorInd.color = new Color(1.0f, 1.0f, 0.0f, 0.006f);
-                break;
-            }
         }
     }
 
