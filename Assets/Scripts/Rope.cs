@@ -27,6 +27,7 @@ public class Rope : MonoBehaviour
         if(Vector3.Distance(plTr.position, ropePoint.position) < minAttachDist && timer <= 0.0f)
         {
             plTr.position = ropePoint.position + offset;
+            plTr.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             plTr.gameObject.GetComponent<PlayerController>().enabled = false;
             plTr.localScale = new Vector2(1.0f, 1.0f);
             animator.SetBool("isPlayerHanging", true);
