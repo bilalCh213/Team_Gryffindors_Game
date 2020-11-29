@@ -72,7 +72,10 @@ public class DamageComponent : MonoBehaviour
             if(tag == "Player")
             {
                 if(!GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.activeSelf)
+                {
                     hitPoints -= maxHitPoints;
+                    Destroy(GetComponent<Collider2D>());
+                }
 
                 GetComponent<PlayerController>().gameObject.transform.GetChild(0).GetChild(9).gameObject.SetActive(false);
                 GetComponent<PlayerController>().WolfParticles(true);
