@@ -58,6 +58,7 @@ public class EnemyController : MonoBehaviour
 
         if(xMove < 0 && vel.x > 0) vel.x = 0.0f;
         else if(xMove > 0 && vel.x < 0) vel.x = 0.0f;
+        
         vel.x += xMove * acceleration * Time.fixedDeltaTime;
         vel.y += yMove * acceleration * Time.fixedDeltaTime;
 

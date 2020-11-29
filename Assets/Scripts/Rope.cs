@@ -8,6 +8,7 @@ public class Rope : MonoBehaviour
     [SerializeField] private Transform ropePoint;
     [Space]
     [SerializeField] private float minAttachDist = 2.0f;
+    [SerializeField] private Vector3 offset = Vector3.zero;
     [Space]
     [SerializeField] private Animator animator;
     [Space]
@@ -25,7 +26,7 @@ public class Rope : MonoBehaviour
     {
         if(Vector3.Distance(plTr.position, ropePoint.position) < minAttachDist && timer <= 0.0f)
         {
-            plTr.position = ropePoint.position;
+            plTr.position = ropePoint.position + offset;
             plTr.gameObject.GetComponent<PlayerController>().enabled = false;
             plTr.localScale = new Vector2(1.0f, 1.0f);
             animator.SetBool("isPlayerHanging", true);
